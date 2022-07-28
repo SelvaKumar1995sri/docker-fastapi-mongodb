@@ -14,7 +14,7 @@ services:
     hostname: user_mongodb
     environment:
       - MONGO_INITDB_DATABASE=user_db
-      - MONGO_INITDB_ROOT_USERNAME=usernme
+      - MONGO_INITDB_ROOT_USERNAME=username
       - MONGO_INITDB_ROOT_PASSWORD=pass
     ports:
       - 27017:27017
