@@ -29,6 +29,10 @@ class User(Resource):
 
     @auth_api
     def get(self):
+        return {"message": "Hello World"}
+
+    @auth_api
+    def post(self):
         try:
             db=get_db()
             x= db.user_db.find({},{"_id":0})
@@ -43,7 +47,6 @@ class User(Resource):
             stu=request.get_json()
             print(stu)
             db.user_db.insert_one(stu)
-            print("hello")
             return "Successfully added"
         except Exception as e:
             print("error on get_stu_details :" +str(e))
@@ -69,7 +72,7 @@ class User(Resource):
         except Exception as e:
             print("error on updation :" +str(e))
 
-api.add_resource(User, '/user')
+api.add_resource(User, '/')
 
 
 if __name__=='__main__':
